@@ -1,7 +1,7 @@
 [
   {
     "title": "Kimi ni Todoke",
-    "image": "./Icons/kimi_ni_todoke.jpg",
+    "image": "assets/Icons/kimi_ni_todoke.jpg",
     "type": "Manga",
     "volumes": 30,
     "chapters": 123,
