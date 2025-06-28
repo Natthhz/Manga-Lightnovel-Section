@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga & Light Novel Database</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+     <!-- Navbar -->
+     <header>
+        <nav>
+            <div class="logo">#</div>
+            <div class="main-header">
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Anime</a></li>
+                    <li><a href="#">Manga</a></li>
+                    <li><a href="#">Forum</a></li>
+                </ul>
+              </div>
+            <div class="right-nav">
+                <div class="search-container">
+                    <input type="search" placeholder="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-actions">
+                    <button class="btn login-btn" id="loginButton">Login</button>
+                    <button class="btn signup-btn" id="signupButton">Sign Up</button>
+                </div>
+
+                <div class="toggle-container">
+                    <!-- <div class="toggle-wrapper">
+                        <span class="toggle-label">JP</span>
+                        <div class="toggle" id="lang-toggle"></div>
+                        <span class="toggle-label">EN</span>
+                    </div> -->
+
+                    <button id="mode-toggle" class="mode-button">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner area for image placement -->
+    <div class="banner-area">
+        <div class="banner-text"></div>
+    </div>
+
+    <!-- Filter section updated to match the image -->
+    <div class="filter-section">
+        <div class="filter-group">
+            <div class="filter-item">
+                <div class="filter-label">Search</div>
+                <div class="search-container2">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" class="search-box" placeholder="Search...">
+                </div>
+            </div>
+            <div class="filter-item">
+                <div class="filter-label">Genres</div>
+                <div class="filter-select-container">
+                    <select class="filter-select" id="genre-filter">
+                        <option value="all">Any</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="romance">Romance</option>
+                        <option value="slice of life">Slice of Life</option>
+                        <option value="isekai">Isekai</option>
+                    </select>
+                    <div class="dropdown-arrow">▼</div>
+                </div>
+            </div>
+            <div class="filter-item">
+                <div class="filter-label">Year</div>
+                <div class="filter-select-container">
+                    <select class="filter-select" id="year-filter">
+                        <option value="all">Any</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="older">Older</option>
+                    </select>
+                    <div class="dropdown-arrow">▼</div>
+                </div>
+            </div>
+            <div class="filter-item">
+                <div class="filter-label">Type</div>
+                <div class="filter-select-container">
+                    <select class="filter-select" id="type-filter">
+                        <option value="all">Any</option>
+                        <option value="manga">Manga</option>
+                        <option value="lightnovel">Light Novel</option>
+                        <option value="manhwa">Manhwa</option>
+                        <option value="manhua">Manhua</option>
+                    </select>
+                    <div class="dropdown-arrow">▼</div>
+                </div>
+            </div>
+            <div class="filter-item">
+                <div class="filter-label">Status</div>
+                <div class="filter-select-container">
+                    <select class="filter-select" id="status-filter">
+                        <option value="all">Any</option>
+                        <option value="ongoing">Ongoing</option>
+                        <option value="completed">Completed</option>
+                        <option value="hiatus">Hiatus</option>
+                    </select>
+                    <div class="dropdown-arrow">▼</div>
+                </div>
+            </div>
+        </div>
+        <div class="view-options">
+            <span style="color: #a78bfa; cursor: pointer;">☰</span>
+        </div>
+    </div>
+
+    <!-- Trending Now section -->
+    <div class="trending-section">
+        <div class="trending-title">
+            <span>Your List</span>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div id="manga-content">
+            <div class="loading">Loading manga & light novels...</div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Status updated!</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>Anime Fan Base</h3>
+                <p>The ultimate platform for anime and manga enthusiasts to discover, track, and share their favorite content.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="far fa-envelope"></i> Email</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Anime Fan Base. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal2" id="loginModal">
+        <div class="modal2-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form action="#" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Login</button>
+            </form>
+            <p class="form-footer">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal2" id="signupModal">
+        <div class="modal2-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign Up</h2>
+            <form action="#" class="signup-form">
+                <div class="form-group">
+                    <label for="newUsername">Username</label>
+                    <input type="text" id="newUsername" placeholder="Choose a username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Password</label>
+                    <input type="password" id="newPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Sign Up</button>
+            </form>
+            <p class="form-footer">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js&json/script.js"></script>
+    <script src="../Z/LoginModal/LoginSignModal.js"></script>
+    <script src="../Z/DarkLightMode/Darklightmode.js"></script>
+
+</body>
+
+</html>
