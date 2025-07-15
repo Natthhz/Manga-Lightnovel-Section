@@ -1,22 +1,24 @@
 /* Global Styles */
 :root {
-    --primary-color: #8C52FF;
+    --primary-color: #FF6B6B;
     --secondary-color: #FFD2FC;
     --dark-color: #1E1E2C;
     --light-color: #F9F7FF;
     --accent-color: #FF6B6B;
     --text-color: #333;
     --text-light: #777;
-    --border-color: #e0e0e0;
-
+    --border-color: #FF6B6B;
     --background-dark: #121218;
-    --card-background: #1e1e2a;
+    --card-background: #ffffff;
     --text-primary: #ffffff;
     --text-secondary: #b3b3cc;
     --success-color: #4cd964;
     --danger-color: #ff3b30;
     --warning-color: #ffcc00;
     --info-color: #5ac8fa;
+    --btn-navbar:#ff5252;
+    --btn-navbar2:#ff3b30;
+
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --chat-width: 350px;
@@ -38,15 +40,18 @@ body {
 }
 
 body.dark-mode {
-    --primary-color: #9D71FF;
+     --primary-color: #8C52FF;
     --secondary-color: #503795;
     --dark-color: #121218;
     --light-color: #1E1E2C;
     --text-color: #e0e0e0;
     --text-light: #aaa;
-    --border-color: #333;
+    --border-color: #8C52FF;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     background-color: #121218;
+    --card-background: #1e1e2a;
+    --btn-navbar:#503795;
+    --btn-navbar2:#8C52FF;
 }
 
 a {
@@ -260,10 +265,19 @@ body.dark-mode .mode-button:hover {
     display: inline-block;
 }
 
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
 .login-btn {
     background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    /* border: 1px solid var(--border-color); */
 }
 
 .login-btn:hover {
@@ -277,6 +291,28 @@ body.dark-mode .mode-button:hover {
 
 .signup-btn:hover {
     background-color: var(--secondary-color);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+}
+
+.primary-btn:hover {
+    background-color: var(--btn-navbar);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid var(--text-primary);
+    padding: 0.8rem 1.5rem;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Modal Styles */
@@ -333,19 +369,22 @@ body.dark-mode .mode-button:hover {
     padding: 0.8rem;
     border-radius: 5px;
     border: 1px solid var(--border-color);
-    background-color: var(--background-dark);
+    background-color: var();
     color: var(--text-color);
   }
   
-  .form-footer {
+   .form-footer {
     margin-top: 1.5rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--text-color);
   }
   
   .form-footer a {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 500;
+  }
+  .form-footer a:hover{
+    color: var(--border-color);
   }
 
 
@@ -371,7 +410,7 @@ footer {
 }
 
 .company-info p {
-    color: var(--text-secondary);
+    color: var(--text-color);
     max-width: 400px;
 }
 
@@ -396,7 +435,7 @@ footer {
 }
 
 .footer-links ul li a {
-    color: var(--text-secondary);
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 
@@ -416,7 +455,7 @@ footer {
 }
 
 .footer-bottom p {
-    color: var(--text-secondary);
+    color: var(--text-color);
     font-size: 0.9rem;
 }
 
@@ -732,3 +771,38 @@ textarea {
     padding: 40px;
     color: #a78bfa;
 }
+
+ @media (max-width: 576px) {
+    .category-grid,
+    .character-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero {
+      height: 400px;
+    }
+  
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .info-row {
+      flex-direction: column;
+    }
+  
+    .info-label {
+      min-width: auto;
+    }
+  
+    .info-value {
+      margin-bottom: 0.5rem;
+    }
+  }
